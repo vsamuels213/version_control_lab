@@ -50,7 +50,16 @@ def encode(user_original_password):
 
 # this is where my partner will write a decoding function
 def decode(user_encoded_password):
-    pass
+    user_encoded_password = list(str(user_encoded_password))
+    number = int()
+    for i in range(0, 8):
+        number = int(user_encoded_password[i])
+        number -= 3
+        if number < 0:
+            number += 10
+        user_encoded_password[i] = str(number)
+    user_encoded_password = ''.join(user_encoded_password)
+    return user_encoded_password
 
 
 # write the program logic
