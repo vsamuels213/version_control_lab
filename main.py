@@ -52,7 +52,7 @@ def encode(user_original_password):
 def decode(user_encoded_password):
     user_encoded_password = list(str(user_encoded_password))
     number = int()
-    for i in range(0, 8):
+    for i in range(0, len(user_encoded_password)):
         number = int(user_encoded_password[i])
         number -= 3
         if number < 0:
